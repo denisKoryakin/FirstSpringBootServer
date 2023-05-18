@@ -12,6 +12,7 @@ public class JavaConfig {
 
     @Bean
     @ConditionalOnProperty(prefix = "netology", name = "profile.dev", havingValue = "true", matchIfMissing = true)
+    /* matchIfMissing = true - делает этот бин дефолтным на случай отсутствия настройки в application.properties */
     public SystemProfile devProfile() {
         return new DevProfile();
     }
